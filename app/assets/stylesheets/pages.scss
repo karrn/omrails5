@@ -3,8 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .jumbotron-home {
-    background-image: url(image_path('home-bg.jpg'));
+    background-image: url(image_path('yeah.gif'));
     background-repeat: no-repeat;
+    background-size: 500px 100%;
     background-position: center center;
-    background-size: cover;
+    background-color: black;
+}
+
+.welcome-header {
+	color: white;
+}
+
+.teaser-img {
+	height: 200px;
+	width: 250px;
+}
+
+.cliente {
+	margin-top:10px;
+	border: gray medium solid;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.cliente-text {
+	padding-left: 10px;
+	padding-top: 4px;
 }

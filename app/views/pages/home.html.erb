@@ -1,32 +1,47 @@
 <% if user_signed_in? %>
     <div class="jumbotron jumbotron-home">
-        <h1>Welcome back!<h1>
+        <h2 class='welcome-header'>Welcome back!<h2>
     </div> 
 <% else %>
     <div class="jumbotron jumbotron-home">
-        <div class="container">
-                <h1>Welcome to my website!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <%= link_to "Learn more »", "#", class: "btn btn-primary btn-lg" %>
+        <div class="welcome-header">
+                <h1>Welcome!</h1>
+                <p>Are you looking to kill some time? Congratulations! You've just come to the right place....</p>
+          <!--       <%= link_to "Learn more »", "#", class: "btn btn-primary btn-lg" %> -->
             
         </div>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                <div class="cliente">
+                    <div class="cliente-text">
+                        <h2>GiphyTV</h2>
+                        <%= image_tag("giphy.gif", :alt => "Giphy", class: "teaser-img") %>
+                        <p>Search the most funniest Gifs and watch them getting streamed like on a TV!</p>
+                        <p><%= link_to "View details", signin_path, class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                <div class="cliente">
+                    <div class="cliente-text">
+                        <h2>SoundCloud</h2>
+                        <%= image_tag("soundcloud.jpg", :alt => "Giphy", class: "teaser-img") %>
+                        <p>Play your favorite music from SoundCloud and manage your own PlayList!</p>
+                        <p><%= link_to "View details", signin_path, class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+                <div class="cliente">
+                    <div class="cliente-text">
+                        <h2>Search away....</h2>
+                        <%= image_tag("yelp.png", :alt => "Giphy", class: "teaser-img") %>
+                        <p>How about we search something random nearby!</p>
+                        <p><%= link_to "View details", signin_path, class: "btn btn-secondary" %></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
