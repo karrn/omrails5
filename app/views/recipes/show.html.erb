@@ -1,0 +1,32 @@
+<div class="container">
+
+	<p>
+	  <strong><%= @recipe.title %></strong>
+	  
+	</p>
+
+	<p>
+	  <strong>Ingredients:</strong>
+	  <p><%= @recipe.ingredients %></p>
+	</p>
+
+
+
+	<p>
+	  <strong>Directions:</strong>
+	  <p><%= @recipe.directions %></p>
+	</p>
+
+	
+
+	<p>
+	  <strong>User:</strong>
+	  <p><%= @recipe.user.email %></p>
+	</p>
+
+	<% if @recipe.user == current_user %>
+		<%= link_to 'Edit', edit_recipe_path(@recipe) %>
+	<% end %>
+	<%= link_to 'Back', recipes_path %>
+
+</div>
