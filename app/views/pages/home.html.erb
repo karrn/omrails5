@@ -1,6 +1,15 @@
 <% if user_signed_in? %>
     <div class="jumbotron jumbotron-home">
-        <h2 class='welcome-header'>Welcome back!<h2>
+        <!-- <h2 class='welcome-header'>Welcome back!<h2> -->
+    </div>
+    <div class="container">
+        <h4>We are still working on adding icing on the cake and site will be available soon! Speaking of cake, would you like to check out some of our awesome recipes?</h4>
+        <div class="btn-group">
+            <%= link_to "Yasss", recipes_path, class: "btn btn-success" %>    
+        </div>
+        <div class="btn-group">
+            <%= link_to "No Thanks! I just wanna stay here and look at T-Rex", "#", class: "btn btn-danger" %>
+        </div>
     </div> 
 <% else %>
     <div class="jumbotron jumbotron-home">
