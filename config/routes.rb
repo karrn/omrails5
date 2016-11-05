@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/:id', to: 'users#show', as: 'user'
+
   resources :items
   resources :recipes
   resources :tweets
