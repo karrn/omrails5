@@ -15,7 +15,7 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
 gem 'acts_as_votable', '~> 0.10.0'
 gem "paperclip", "~> 5.0.0"
-gem 'aws-sdk', '~> 2.3'
+
 
 # Gem for bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha4'
@@ -36,6 +36,7 @@ end
 
 group :production do
 	gem 'pg'
+	gem 'aws-sdk', '~> 2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
