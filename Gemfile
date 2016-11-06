@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem "cocoon"
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem "acts_as_follower", github: "tcocca/acts_as_follower"
 
 # Gem for bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha4'
