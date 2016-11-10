@@ -1,9 +1,11 @@
 <div class="container">
 
 	<p>
-	  <strong><%= @recipe.title %></strong>
+	  <strong><h2><%= @recipe.title %></h2></strong>
 	  
 	</p>
+
+	<p><%= image_tag @recipe.image, size: "650x350" %></p>
 
 	<p>
 	  <strong>Ingredients:</strong>
@@ -21,7 +23,8 @@
 
 	<p>
 	  <strong>User:</strong>
-	  <p><%= @recipe.user.email %></p>
+	  <!-- <p><%= @recipe.user.username %></p> -->
+	  <p><%= link_to @recipe.user.username, user_path(@recipe.user.username) %></p>
 	</p>
 
 	<% if @recipe.user == current_user %>

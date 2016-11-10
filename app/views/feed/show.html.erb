@@ -8,15 +8,35 @@
     </div>
     <div class="col-md-8">
       <% if user_signed_in? %>
-        <center><%= link_to 'New Tweet', new_tweet_path %></center>
+        <center><%= link_to 'New Recipe', new_recipe_path %></center>
       <% end %>
       <ul class="list-group">
+        <% @recipes.each_slice(3) do |recipes| %>
+          <row>
+            <% recipes.each do |recipe| %>
+              <div class="col-md-4">
+                <div class="hovereffect">
+                    <%= image_tag recipe.image, class: "img-responsive", size: "320x320" %>
+                    <div class="overlay">
+                       <h2><%= recipe.title %></h2>
+                       <a><%= link_to 'Recipe', recipe, class: "info" %></a>
+                    </div>
+                    </div>
+              </div>
+            <% end %>
+          </row>
+        <% end %>  
+
+
+
+
+        <!-- *****For Tweets
         <% @tweets.each do |tweet| %>
           <%= link_to tweet, class: "list-group-item list-group-item-action active" do %>
             <h5 class="list-group-item-heading"><%= tweet.user.username %></h5>
             <p class="list-group-item-text"><%= tweet.content %></p>
           <% end %>            
-        <% end %> 
+        <% end %>  -->
       </ul>      
     </div>
   </div>

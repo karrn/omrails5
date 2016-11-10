@@ -8,13 +8,21 @@
           <% if current_user.following?(@user) %>
             <p class="card-text"><%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %></p>
           <% else %>
-            <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post %></p>
+            <% if current_user == @user %>
+              <p class="card-text"><%= link_to "My Feed", feed_path %></p>
+            <% else %>
+              <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post %></p>  
+            <% end %>
           <% end %>
         <% end %>
       </div>
     </div>
     <div class="col-md-8">
-      <ul class="list-group">
+      <% if user_signed_in? %>
+        <center><%= link_to 'New Recipe', new_recipe_path %></center>
+      <% end %>
+      <!-- For Tweets -->
+      <!-- <ul class="list-group">
         <% @tweets.each do |tweet| %>
           <%= link_to tweet, class: "list-group-item list-group-item-action active" do %>
             <h5 class="list-group-item-heading"><%= tweet.user.username %></h5>
@@ -22,7 +30,26 @@
           <% end %>            
         <% end %>
         <%= link_to 'Back', tweets_path, class: "card-link" %> 
-      </ul>      
+      </ul>       -->
+
+      <% @recipes.each_slice(3) do |recipes| %>
+        <row>
+          <% recipes.each do |recipe| %>
+            <div class="col-md-4">
+              <div class="hovereffect">
+                  <%= image_tag recipe.image, class: "img-responsive", size: "320x320" %>
+                  <div class="overlay">
+                     <h2><%= recipe.title %></h2>
+                     <a><%= link_to 'Recipe', recipe, class: "info" %></a>
+                  </div>
+                  </div>
+            </div>
+          <% end %>
+        </row>
+      <% end %>  
+
     </div>
+
   </div>
+  <center><p><%= link_to 'Back', recipes_path, class: "card-link" %></p></center>
 </div>
