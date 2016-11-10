@@ -106,19 +106,28 @@
 </div> -->
 
 <div class="container">
-  <% @recipes.each_slice(3) do |recipes| %>
-    <row>
-      <% recipes.each do |recipe| %>
-        <div class="col-md-4">
-          <div class="hovereffect">
-              <%= image_tag recipe.image, class: "img-responsive", size: "320x320" %>
-              <div class="overlay">
-                 <h2><%= recipe.title %></h2>
-                 <a><%= link_to 'Recipe', recipe, class: "info" %></a>
-              </div>
-              </div>
-        </div>
-      <% end %>
-    </row>
-  <% end %>  
+  <div>
+    <% if user_signed_in? %>
+        <center><%= link_to 'New Recipe', new_recipe_path, class: "btn btn-danger" %></center>
+    <% else %>
+        <center><%= link_to 'New Recipe', signin_path, class: "btn btn-danger" %></center>
+    <% end %>
+  </div>
+  <div>
+    <% @recipes.each_slice(3) do |recipes| %>
+      <row>
+        <% recipes.each do |recipe| %>
+          <div class="col-md-4">
+            <div class="hovereffect">
+                <%= image_tag recipe.image, class: "img-responsive", size: "320x320" %>
+                <div class="overlay">
+                   <h2><%= recipe.title %></h2>
+                   <a><%= link_to 'Recipe', recipe, class: "info" %></a>
+                </div>
+                </div>
+          </div>
+        <% end %>
+      </row>
+    <% end %>
+  </div>  
 </div>

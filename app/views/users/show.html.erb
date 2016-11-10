@@ -9,7 +9,7 @@
             <p class="card-text"><%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %></p>
           <% else %>
             <% if current_user == @user %>
-              <p class="card-text"><%= link_to "My Feed", feed_path %></p>
+              <p class="card-text"><%= link_to "My Feed", feed_path, class: "btn btn-primary" %></p>
             <% else %>
               <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post %></p>  
             <% end %>
@@ -19,7 +19,7 @@
     </div>
     <div class="col-md-8">
       <% if user_signed_in? %>
-        <center><%= link_to 'New Recipe', new_recipe_path %></center>
+        <center><%= link_to 'New Recipe', new_recipe_path, class: "btn btn-danger" %></center>
       <% end %>
       <!-- For Tweets -->
       <!-- <ul class="list-group">
@@ -51,5 +51,5 @@
     </div>
 
   </div>
-  <center><p><%= link_to 'Back', recipes_path, class: "card-link" %></p></center>
+  <center><p><%= link_to 'Back', recipes_path, class: "card-link btn btn-info" %></p></center>
 </div>
